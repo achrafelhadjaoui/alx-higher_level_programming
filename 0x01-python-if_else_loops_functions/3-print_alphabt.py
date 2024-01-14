@@ -4,5 +4,5 @@ while i < 123:
     if chr(i) == 'q' or chr(i) == 'e':
         i += 1
     else:
-        print(f"{chr(i)}", end="")
+        print("{}".format(chr(i)), end="")
         i += 1
