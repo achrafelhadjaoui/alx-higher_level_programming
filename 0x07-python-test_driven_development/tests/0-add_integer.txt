@@ -1,0 +1,37 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(5, 10)
+15
+
+>>> add_integer(20, 20)
+40
+
+>>> add_integer("str", 1)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+>>> add_integer(1, "str")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+>>> add_integer("str", "str")
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+>>> add_integer(None, 1)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+>>> add_integer(1, None)
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+>>> add_integer(None, None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
