@@ -64,7 +64,7 @@ class Rectangle:
 
     def __del__(self):
         Rectangle.number_of_instances -= 1
-        print("By rectangle...")
+        print("Bye rectangle...")
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
