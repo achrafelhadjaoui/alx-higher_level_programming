@@ -5,7 +5,9 @@
 
 class MyList(list):
     """Represent of MyList"""
+    pass
 
     def print_sorted(self):
         """method that sorted in a list"""
+
         print(sorted(list(self)))
