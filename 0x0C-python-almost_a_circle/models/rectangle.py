@@ -70,11 +70,55 @@ class Rectangle(Base):
 
     def display(self):
         """print to the stdout the Rectangle instance with char #"""
+        for k in range(self.__y):
+            print()
         for i in range(self.__height):
+            for q in range(self.__x):
+                print(end=" ")
             for j in range(self.__width):
                 print("#", end="")
             print()
 
     def __str__(self):
-        """Return the print() and str() representation of the Rectangle."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        """Return the print() and str() representation
+        of the Rectangle."""
+        return"[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
+                                                      self.__y,
+                                                      self.__width,
+                                                      self.__height)
+
+    def update(self, *args, **kwargs):
+        """assign an argument to each attribute"""
+        if len(args) != 0:
+            count = 0
+            for arg in args:
+                if count == 0:
+                    self.id = arg
+                elif count == 1:
+                    self.__width = arg
+                elif count == 2:
+                    self.__height = arg
+                elif count == 3:
+                    self.__x = arg
+                elif count == 4:
+                    self.__y = arg
+                count += 1
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "width":
+                    self.__width = value
+                elif key == "height":
+                    self.__height = value
+                elif key == "x":
+                    self.__x = value
+                elif key == "y":
+                    self.__y = value
+
+    def to_dictionary(self):
+        """method that returns the dictionary
+        representation of a Rectangle"""
+        new = {'x': self.x, 'y': self.y, 'id': self.id,
+               'width': self.width, 'height': self.height}
+        return new
