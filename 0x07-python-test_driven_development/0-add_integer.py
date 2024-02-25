@@ -8,7 +8,7 @@
 
 
 def add_integer(a, b=98):
-    """Return the sum of a and b
+    """Return the sum of a and b,
     otherwise raise a TypeError exception with a message
     """
     if not (isinstance(a, int)) and not (isinstance(a, float)):
