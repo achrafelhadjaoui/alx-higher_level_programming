@@ -1,37 +1,36 @@
+The ``0-add_integer`` module
+============================
+
+Testing ``add_integer``
+---------------------
+
+Import function from module:
 >>> add_integer = __import__('0-add_integer').add_integer
 
->>> add_integer(5, 10)
+Testing:
+>>> add_integer(10, 5)
 15
 
->>> add_integer(20, 20)
-40
+>>> add_integer(10, -5)
+5
 
->>> add_integer("str", 1)
-Traceback (most recent call last):
-	...
-TypeError: a must be an integer
+>>> add_integer(2)
+100
 
->>> add_integer(1, "str")
+>>> add_integer(5.0, 10.5)
+15
+
+>>> add_integer(5, None)
 Traceback (most recent call last):
-	...
+...
 TypeError: b must be an integer
 
->>> add_integer("str", "str")
+>>> add_integer(5, "Hello")
 Traceback (most recent call last):
-	...
-TypeError: a must be an integer
-
->>> add_integer(None, 1)
-Traceback (most recent call last):
-	...
-TypeError: a must be an integer
-
->>> add_integer(1, None)
-Traceback (most recent call last):
-	...
+...
 TypeError: b must be an integer
 
->>> add_integer(None, None)
+>>> add_integer("Hello", 5)
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
