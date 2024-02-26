@@ -1,22 +1,33 @@
 #!/usr/bin/python3
-
+""" unit test for bases """
 import unittest
+from models.square import Square
+from models.rectangle import Rectangle
 from models.base import Base
 
 
-class test_base(unittest.TestCase):
-    """Represent of test_base"""
-    def test_task1(self):
-        """ test the value of the instance
-            public attribute
+class BaseTestCase(unittest.TestCase):
+    """ class for base test """
+    def setUp(self):
         """
-        obj = Base()
-        self.assertEqual(obj.id, 1)
-        obj1 = Base(25)
-        obj2 = Base()
-        self.assertEqual(obj1.id, 25)
-        self.assertEqual(obj2.id, 2)
+        Resets id
+        """
+        Base._Base__nb_objects = 0
+
+    def test_base_task1(self):
+        b1 = Base()
+        self.assertEqual(b1.id, 1)
+
+        b2 = Base()
+        b3 = Base()
+        self.assertEqual(b2.id, 2)
+        self.assertEqual(b3.id, 3)
+
+        b4 = Base(12)
+        b5 = Base()
+        self.assertEqual(b4.id, 12)
+        self.assertEqual(b5.id, 4)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()
