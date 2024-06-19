@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
 const quote = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
-quote.map((item) => {
-  console.log(item);
-});
+for (let i = 0; i < quote.length; i++) {
+  console.log(quote[i]);
+}

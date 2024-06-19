@@ -2,9 +2,12 @@
 
 const { argv } = require('process');
 
-const number = parseInt(argv[2]);
-Number.isInteger(number)
-   ? number.map((item) => {
-	console.log('item')
-});
-   : console.log('Missing number of occurrences');;
+const number = parseInt(argv[2], 10);
+
+if (Number.isInteger(number)) {
+  for (let i = 0; i < number; i++) {
+    console.log('C is fun');
+  }
+} else {
+  console.log('Missing number of occurrences');
+}
