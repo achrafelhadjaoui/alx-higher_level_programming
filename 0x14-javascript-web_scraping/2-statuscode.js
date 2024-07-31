@@ -7,6 +7,6 @@ if (process.argv.length < 3) {
 }
 const link = process.argv[2];
 request(link, function (error, response, body) {
-  console.error('error:', error); // Print the error if one occurred
+  if (error) { console.error('error:', error); } // Print the error if one occurred
   console.log('code:', response && response.statusCode); // Print the response status code if a response was received
 });
